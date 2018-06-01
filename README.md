@@ -1,3 +1,5 @@
 # Solo-project
 Hack Reactor last app practice
-- [ ] Solo app 
+- [ ] Input form with single text input
+- [ ] Click handler to capture data in text form field
+- [ ] Helper utilities to read and write to local storage
