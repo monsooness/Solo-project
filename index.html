@@ -1,18 +1,36 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Set/get to local storage</title>
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.js"
-	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-	crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<title>Snippity</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<input class="textField" type="text" name="firstInputField">
-	<button class="setData">Click to Save Text</button>
-	<button class="getData">Click to Get Text</button>
-	<div class='debug'></div>
+	<div class='title'>&lt;/snippity&gt;</div>
+	
+	
+	<div class='all_info'>
+		<select name="dropdown" class=('#mySelect')>
+			<option value="" selected disabled hidden>Existing Snippets</option>
+		</select><br>
+		<input class="textField" type="text" name="firstInputField" placeholder="Snippet Name"><br>
+		<textarea class="codeArea" placeholder="Enter your Snippet here"></textarea>
+	</div>
+
+	<div class='buttons'>
+		<button class="setData">Save Snippet</button>
+		<button class="resetData" onclick="ClearFields()">Reset Snippet</button>
+		<button class="getData">Get Snippet</button>
+	</div>
+
+	<div class = 'extra'>
+
+	</div>
+
 </body>
 </html>
+
+	<!-- <button class="getData" >Click to get text</button><br> -->
