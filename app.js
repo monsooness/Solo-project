@@ -7,30 +7,35 @@ $(document).ready(function(){
     snippet_name = $('.textField').val();
     snippet_code = $('.codeArea').val();
     obj[snippet_name] = snippet_code
-    console.log(obj)
+    console.log(snippet_name)
+
 
     localStorage.setItem(snippet_name, snippet_code);
     $('.all_info').val('');
+
+    $('.mySelect').append($('<option>', {
+      value: snippet_name,
+      text: snippet_name
+    }));
   });
 
+  $('.mySelect').change(function(){
+    var selectedVal = $(this).find(':selected').val(); 
+    var selectedText = $(this).find(':selected').val();
+    $('.codeArea').val(selectedVal)
+    $('.textField').val(selectedText)
+  })
+
+  $('.textField').change(function(){
+    var selectedVal = $(this).find(':selected').val();
+    $('.codeArea').val(selectedVal)
+  })
 
 
-  // $('.dropdown').on('click', function(){
-  //   alert('i was dropped')
-  //   let retrievedData = localStorage.getItem(snippet_name)
-  // })
-
-  var $dropdown = $("select[name='dropdown']");
-
-  $.each(obj, function(val, text){
-    $('#mySelect').append($('<option></option>')).val(val).html(text)
-      })
-
-  //reset function
-  function ClearFields() {
-     document.getElementsByClassName("buttons").value = "";
-}
-
+  $('.resetData').on('click', function(){
+    $('.codeArea').val('')
+    $('.textField').val('')
+  });
 
 }) //document.ready
 
@@ -40,6 +45,3 @@ $(document).ready(function(){
 
 
 
- // $('.getData').on('click', function(){
-  //   let retrievedData = localStorage.getItem('myFormTextData');
-  // });

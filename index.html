@@ -9,13 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class='title'>&lt;/snippity&gt;</div>
+	<div class='title'>&lt;<div class="blink_me">/</div>snippity&gt;</div>
 	
 	
 	<div class='all_info'>
-		<select name="dropdown" class=('#mySelect')>
-			<option value="" selected disabled hidden>Existing Snippets</option>
-		</select><br>
+		<select name="dropdown" class='mySelect'></select><br>
 		<input class="textField" type="text" name="firstInputField" placeholder="Snippet Name"><br>
 		<textarea class="codeArea" placeholder="Enter your Snippet here"></textarea>
 	</div>
@@ -23,7 +21,7 @@
 	<div class='buttons'>
 		<button class="setData">Save Snippet</button>
 		<button class="resetData" onclick="ClearFields()">Reset Snippet</button>
-		<button class="getData">Get Snippet</button>
+		
 	</div>
 
 	<div class = 'extra'>
@@ -33,4 +31,3 @@
 </body>
 </html>
 
-	<!-- <button class="getData" >Click to get text</button><br> -->
