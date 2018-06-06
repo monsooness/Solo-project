@@ -1,43 +1,41 @@
 $(document).ready(function(){
-  let snippet_name;
-  let snippet_code;
-  let obj = {}
+
+ //Snippet button and create dropdown dynamically
 
   $('.setData').on('click', function() {
-    snippet_name = $('.textField').val();
-    snippet_code = $('.codeArea').val();
-    obj[snippet_name] = snippet_code
-    console.log(snippet_name)
+    let snippet_name = $('.textField').val();
+    let snippet_code = $('.codeArea').val();
 
 
     localStorage.setItem(snippet_name, snippet_code);
     $('.all_info').val('');
 
     $('.mySelect').append($('<option>', {
-      value: snippet_name,
-      text: snippet_name
+      text: snippet_name,
+      // value: snippet_code
     }));
   });
 
+// Dynamic Dropdown select functionality 
+
   $('.mySelect').change(function(){
-    var selectedVal = $(this).find(':selected').val(); 
-    var selectedText = $(this).find(':selected').val();
-    $('.codeArea').val(selectedVal)
-    $('.textField').val(selectedText)
-  })
-
-  $('.textField').change(function(){
-    var selectedVal = $(this).find(':selected').val();
+    let selectedText = $(this).find(':selected').text(); 
+    let selectedVal = localStorage.getItem(selectedText)
+    $('.textField').val(selectedText) 
     $('.codeArea').val(selectedVal)
   })
 
+//Reset Button 
 
   $('.resetData').on('click', function(){
     $('.codeArea').val('')
     $('.textField').val('')
+    $('.mySelect').empty()
   });
 
-}) //document.ready
+}) 
+
+
 
 
 
